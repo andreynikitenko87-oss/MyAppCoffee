@@ -14,10 +14,20 @@ import './App.css'
 function App() {
   const [currentPage, setCurrentPage] = useState('home')
   const [cart, setCart] = useState({})
+  const cartTotal = coffeeProducts.reduce(
+    (sum, product) => sum + product.price * (cart[product.id] ?? 0),
+    0
+  )
+  const cartItemCount = Object.values(cart).reduce((sum, quantity) => sum + quantity, 0)
 
   return (
     <>
-      <Header currentPage={currentPage} setCurrentPage={setCurrentPage} />
+      <Header
+        currentPage={currentPage}
+        setCurrentPage={setCurrentPage}
+        cartTotal={cartTotal}
+        cartItemCount={cartItemCount}
+      />
       {currentPage === 'home' ? (
         <>
           <Hero setCurrentPage={setCurrentPage} />

@@ -42,6 +42,7 @@ header {
 
 nav {
     display: flex;
+    gap: 20px;
     justify-content: space-between;
     align-items: center;
     max-width: 1200px;
@@ -58,6 +59,8 @@ nav {
 nav ul {
     list-style: none;
     display: flex;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 nav ul li {
@@ -81,6 +84,90 @@ nav ul li button:hover {
 nav ul li button[aria-current='page'] {
     color: #D2B48C;
     font-weight: bold;
+}
+
+.nav-right {
+    align-items: center;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-order {
+    align-items: center;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.24);
+    border-radius: 999px;
+    color: white;
+    cursor: pointer;
+    display: inline-flex;
+    gap: 12px;
+    padding: 8px 14px 8px 10px;
+    transition: background-color 0.3s, border-color 0.3s, transform 0.3s;
+}
+
+.nav-order:hover {
+    background: rgba(255,255,255,0.18);
+    border-color: rgba(210,180,140,0.75);
+    transform: translateY(-1px);
+}
+
+.nav-order[aria-current='page'] {
+    background: rgba(210,180,140,0.18);
+    border-color: #D2B48C;
+}
+
+.nav-order-icon {
+    align-items: center;
+    background: rgba(210,180,140,0.18);
+    border-radius: 999px;
+    display: inline-flex;
+    height: 40px;
+    justify-content: center;
+    position: relative;
+    width: 40px;
+}
+
+.nav-order-icon svg {
+    display: block;
+    height: 22px;
+    width: 22px;
+}
+
+.nav-order-badge {
+    align-items: center;
+    background-color: #D2B48C;
+    border: 2px solid #8B4513;
+    border-radius: 999px;
+    color: #333;
+    display: inline-flex;
+    font-size: 0.72rem;
+    font-weight: bold;
+    height: 22px;
+    justify-content: center;
+    min-width: 22px;
+    padding: 0 6px;
+    position: absolute;
+    right: -6px;
+    top: -6px;
+}
+
+.nav-order-copy {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+
+.nav-order-label {
+    color: rgba(255,255,255,0.78);
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.nav-order-copy strong {
+    font-size: 1rem;
+    font-weight: 700;
 }
 
 /* Hero Section */
@@ -553,13 +640,25 @@ footer {
         flex-direction: column;
     }
 
+    .nav-right {
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+    }
+
     nav ul {
-        margin-top: 10px;
+        justify-content: center;
+        margin-top: 0;
     }
 
     nav ul li {
         margin-left: 0;
         margin-right: 20px;
+    }
+
+    .nav-order {
+        justify-content: center;
+        width: min(280px, 100%);
     }
 
     .featured-drink {
