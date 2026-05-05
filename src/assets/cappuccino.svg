@@ -1,0 +1,24 @@
+<svg viewBox="0 0 200 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Cup -->
+  <rect x="40" y="100" width="120" height="140" fill="#E8D4C4" stroke="#8B4513" stroke-width="2" rx="5"/>
+
+  <!-- Cup handle -->
+  <path d="M 160 120 Q 200 120 200 170 Q 200 220 160 220" fill="none" stroke="#8B4513" stroke-width="3"/>
+
+  <!-- Espresso layer (bottom) -->
+  <rect x="45" y="180" width="110" height="50" fill="#2C1810" rx="3"/>
+
+  <!-- Steamed milk layer (middle) -->
+  <rect x="45" y="110" width="110" height="70" fill="#C4A88A" rx="3"/>
+
+  <!-- Foam on top -->
+  <ellipse cx="100" cy="115" rx="55" ry="15" fill="#D9C9B8"/>
+  <ellipse cx="100" cy="110" rx="55" ry="12" fill="#E8DDD0"/>
+
+  <!-- Saucer -->
+  <ellipse cx="100" cy="245" rx="70" ry="15" fill="#E8D4C4" stroke="#8B4513" stroke-width="2"/>
+
+  <!-- Label -->
+  <text x="100" y="280" font-size="18" font-weight="bold" text-anchor="middle" fill="#8B4513">CAPPUCCINO</text>
+</svg>
+
