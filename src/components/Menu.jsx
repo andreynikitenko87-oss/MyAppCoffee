@@ -1,27 +1,23 @@
-import espressoImg from '../assets/espresso.svg'
-import cappuccinoImg from '../assets/cappuccino.svg'
-import latteImg from '../assets/latte.svg'
-import americanoImg from '../assets/americano.svg'
+import { formatPrice } from '../data/coffeeProducts'
 
-const menuItems = [
-  { name: 'Espresso', price: '$2.50', image: espressoImg },
-  { name: 'Cappuccino', price: '$3.50', image: cappuccinoImg },
-  { name: 'Latte', price: '$4.00', image: latteImg },
-  { name: 'Americano', price: '$2.75', image: americanoImg },
-]
-
-export default function Menu() {
+export default function Menu({ menuProducts, setCurrentPage }) {
   return (
     <section id="menu">
       <h2>Our Menu</h2>
       <div className="menu-items">
-        {menuItems.map((item, index) => (
-          <div key={index} className="item">
+        {menuProducts.map((item) => (
+          <div key={item.id} className="item">
             <img src={item.image} alt={item.name} className="coffee-image" />
             <h3>{item.name}</h3>
-            <p>{item.price}</p>
+            <p>{formatPrice(item.price)}</p>
+            <span className="item-description">{item.description}</span>
           </div>
         ))}
+      </div>
+      <div className="menu-action">
+        <button className="btn secondary-btn" onClick={() => setCurrentPage('calculator')}>
+          Open Calculator
+        </button>
       </div>
     </section>
   )

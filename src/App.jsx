@@ -5,12 +5,15 @@ import About from './components/About'
 import Featured from './components/Featured'
 import Menu from './components/Menu'
 import Chat from './components/Chat'
+import Calculator from './components/Calculator'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import { coffeeProducts, featuredProduct, menuProducts } from './data/coffeeProducts'
 import './App.css'
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home')
+  const [cart, setCart] = useState({})
 
   return (
     <>
@@ -19,11 +22,18 @@ function App() {
         <>
           <Hero setCurrentPage={setCurrentPage} />
           <About />
-          <Featured setCurrentPage={setCurrentPage} />
-          <Menu />
+          <Featured featuredProduct={featuredProduct} setCurrentPage={setCurrentPage} />
+          <Menu menuProducts={menuProducts} setCurrentPage={setCurrentPage} />
           <Contact />
           <Footer />
         </>
+      ) : currentPage === 'calculator' ? (
+        <Calculator
+          products={coffeeProducts}
+          cart={cart}
+          setCart={setCart}
+          setCurrentPage={setCurrentPage}
+        />
       ) : (
         <Chat setCurrentPage={setCurrentPage} />
       )}

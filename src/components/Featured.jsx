@@ -1,24 +1,28 @@
-import honeyCinnamonImg from '../assets/honey-cinnamon-latte.svg'
+import { formatPrice } from '../data/coffeeProducts'
 
-export default function Featured({ setCurrentPage }) {
+export default function Featured({ featuredProduct, setCurrentPage }) {
+  if (!featuredProduct) {
+    return null
+  }
+
   return (
     <section id="featured">
       <h2>Featured Drink</h2>
       <div className="featured-drink">
         <div className="featured-copy">
           <p className="featured-label">Drink of the Month</p>
-          <h3>Honey Cinnamon Latte</h3>
-          <p>A smooth espresso latte blended with warm cinnamon, steamed milk, and a light honey finish.</p>
+          <h3>{featuredProduct.name}</h3>
+          <p>{featuredProduct.description}</p>
           <div className="featured-details">
-            <span>$4.75</span>
+            <span>{formatPrice(featuredProduct.price)}</span>
             <span>Hot or Iced</span>
           </div>
           <button className="btn" onClick={() => setCurrentPage('chat')}>Ask About It</button>
         </div>
         <div className="featured-image-container">
           <img
-            src={honeyCinnamonImg}
-            alt="Honey Cinnamon Latte"
+            src={featuredProduct.image}
+            alt={featuredProduct.name}
             className="featured-coffee-image"
           />
         </div>

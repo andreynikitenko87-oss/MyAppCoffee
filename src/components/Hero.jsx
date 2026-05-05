@@ -10,7 +10,12 @@ export default function Hero({ setCurrentPage }) {
     <section id="home" className="hero">
       <h1>Welcome to Fresh Coffee</h1>
       <p>The freshest coffee experience in town</p>
-      <button className="btn" onClick={handleViewMenu}>View Menu</button>
+      <div className="hero-actions">
+        <button className="btn" onClick={handleViewMenu}>View Menu</button>
+        <button className="btn secondary-btn" onClick={() => setCurrentPage('calculator')}>
+          Open Calculator
+        </button>
+      </div>
     </section>
   )
 }

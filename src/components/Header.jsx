@@ -25,7 +25,20 @@ export default function Header({ currentPage, setCurrentPage }) {
         </div>
         <ul>
           <li>
-            <button onClick={() => setCurrentPage('home')}>Home</button>
+            <button
+              onClick={() => setCurrentPage('home')}
+              aria-current={currentPage === 'home' ? 'page' : undefined}
+            >
+              Home
+            </button>
+          </li>
+          <li>
+            <button
+              onClick={() => setCurrentPage('calculator')}
+              aria-current={currentPage === 'calculator' ? 'page' : undefined}
+            >
+              Calculator
+            </button>
           </li>
           <li>
             <a href="#about" onClick={handleNavClick} style={{ background: 'none', border: 'none', color: 'white', cursor: 'pointer', textDecoration: 'none' }}>About</a>
